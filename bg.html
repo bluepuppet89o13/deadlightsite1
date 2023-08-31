@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deathlight - Hacker Console</title>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1110314632226291762/1141756132336095342/static_1.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+      color: red;
+      font-family: "Courier New", monospace;
+      font-size: 16px;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .console {
+      padding: 20px;
+      border: 2px solid red;
+      box-shadow: 0 0 10px red;
+      background-color: black;
+      width: 80%;
+      max-width: 800px; /* Adjusted width */
+      overflow: hidden;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .output {
+      animation: typing 4s steps(40) 1s forwards, blink-caret .75s infinite, text-scale 1s 1s infinite alternate;
+      white-space: pre-line; /* Preserve line breaks */
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+
+    .prompt {
+      color: red;
+    }
+
+    .glitch {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 0, 0, 0.02);
+      pointer-events: none;
+      z-index: -1;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-right-color: transparent;
+      }
+      50% {
+        border-right-color: red;
+      }
+    }
+
+    @keyframes text-scale {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes glitch {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      20%, 60% {
+        transform: translate(-5px, -5px);
+      }
+      40% {
+        transform: translate(5px, 5px);
+      }
+      80% {
+        transform: translate(-2px, 2px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="console" id="console-container">
+    <div class="glitch"></div>
+    <div class="output"></div>
+    <div class="prompt">></div>
+  </div>
+  <script>
+    const outputContainer = document.querySelector(".output");
+    const messages = [
+      "╔═════════════════════════════╗",
+      "║      Welcome to Deathlight   ║",
+      "║  Conquer your opponents     ║",
+      "║  Embrace the thrill of       ║",
+      "║  intense gaming.            ║",
+      "╠═════════════════════════════╣",
+      "║ [ACCESS GRANTED]            ║",
+      "║ [CONNECTING...]             ║",
+      "║ [WELCOME, HACKER]           ║",
+      "║                             ║",
+      "║ [MISSION: DEATHLIGHT]       ║",
+      "║                             ║",
+      "║ [TASK: CONQUER]             ║",
+      "║ [TASK: THRILL]              ║",
+      "║ [TASK: DOMINATE]            ║",
+      "║ [TASK: EMBRACE]             ║",
+      "║ [TASK: DEFEAT]              ║",
+      "║                             ║",
+      "╚═════════════════════════════╝"
+    ];
+
+    let messageIndex = 0;
+    let lineIndex = 0;
+
+    function writeLine() {
+      if (lineIndex < messages[messageIndex].length) {
+        outputContainer.innerHTML += messages[messageIndex][lineIndex];
+        lineIndex++;
+        setTimeout(writeLine, 50);
+      } else {
+        outputContainer.innerHTML += "<br>";
+        messageIndex = (messageIndex + 1) % messages.length;
+        lineIndex = 0;
+        setTimeout(writeLine, 400);
+      }
+    }
+
+    writeLine();
+  </script>
+</body>
+</html>

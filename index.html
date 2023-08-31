@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEATH LIGHT</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS file if needed -->
+  <style>
+    /* Additional styles specific to main.html */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(8, 8, 8, 0.541); /* Adjust the alpha value for transparency */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .logo {
+      margin-top: 20px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .description {
+      font-size: 24px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    .button {
+      background-color: #bb0000;
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      animation: buttonAnimation 1s ease infinite;
+    }
+
+    .info-button {
+      background-color: #4e4e4e;
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      animation: buttonAnimation 1s ease infinite;
+      text-decoration: none; /* Remove underline */
+    }
+
+    .button:hover,
+    .info-button:hover {
+      background-color: #990000;
+    }
+
+    .author,
+    .owner {
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    .author:hover,
+    .owner:hover {
+      color: #ff0000;
+    }
+
+    .author-link,
+    .owner-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .author-link:hover,
+    .owner-link:hover {
+      text-decoration: none;
+    }
+
+    .author-container,
+    .owner-container {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .owner-container {
+      bottom: 10px;
+    }
+
+    @keyframes buttonAnimation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <iframe src="bg.html" frameborder="0" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></iframe>
+  <div class="overlay">
+    <img src="https://cdn.discordapp.com/attachments/1110314632226291762/1141756132336095342/static_1.png" alt="DEAD LIGHT Logo" class="logo">
+    <h1 class="title">DEAD LIGHT</h1>
+    <p class="description">Welcome to our site</p>
+    <p class="description">Join Our Discord Server</p>
+    <a href="https://discord.gg/xBmKw3HN8a" target="_blank" class="button">
+      <img src="https://cdn.discordapp.com/attachments/1142571449983443145/1144963342461571072/Picsart_23-08-26_15-23-51-786.jpg" alt="Join Discord" width="120" height="40">
+    </a>
+    <p>More text here...</p>
+    <a href="info.html" class="info-button">Info</a>
+    <div class="author-container">
+      <span class="author">
+        <a href="https://www.youtube.com/channel/UC8MX4OrM6nyhpsSksVJZOvA" target="_blank" class="author-link">Author: Blue Puppet</a>
+      </span>
+    </div>
+    <div class="owner-container">
+      <span class="owner">
+        <a href="https://www.aparat.com/Cooper_game" target="_blank" class="owner-link">Owner: Mr.Cooper</a>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
